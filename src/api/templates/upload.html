@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action = "http://localhost:5000/upload_form" method = "POST" enctype = "multipart/form-data">
+
+    Choose a Genre<SELECT name="Genre">
+        {% for a in Genre_list %}
+            <OPTION value={{a}}>{{a}}</option>
+        {% endfor %}
+        </SELECT><br>
+    
+        
+    Choose a Platform<SELECT name="Platform">
+        {% for b in Platform_list %}
+            <OPTION value={{b}}>{{b}}</option>
+        {% endfor %}
+        </SELECT><br>
+    
+    Choose a Publisher<SELECT name="Publisher">
+        {% for c in Publisher_list %}
+            <OPTION value={{c}}>{{c}}</option>
+        {% endfor %}
+        </SELECT><br>
+    <input type = "submit"/>
+</form>
+</body>
+</html>
