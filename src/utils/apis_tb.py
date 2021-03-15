@@ -11,7 +11,7 @@ from sklearn.decomposition import PCA
 from pickle import load
 from sklearn.linear_model import LinearRegression
 
-model_load = open("ML_project/data/Entrenamiento_pca.csv")
+model_load = open(root_path + "/data/Entrenamiento_pca.csv")
 #model_load = open("ML_project\\data\\Entrenamiento_pca.csv")
 numpy_array = np.loadtxt(model_load, delimiter=",")
 
@@ -32,7 +32,7 @@ def funcion_pred(df):
     to_pred = pca.fit_transform(to_pred)
 
     print("###################", to_pred.shape)
-    loaded_model = load(open("ML_project/data/finalized_model.sav", "rb"))
+    loaded_model = load(open(root_path + "/data/finalized_model.sav", "rb"))
 
     prediction = loaded_model.predict(to_pred)
     data = {}
