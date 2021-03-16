@@ -31,12 +31,12 @@ def funcion_pred(df):
     pca.fit(to_pred)
     to_pred = pca.fit_transform(to_pred)
 
-    print("###################", to_pred.shape)
     loaded_model = load(open(root_path + "/data/finalized_model.sav", "rb"))
 
     prediction = loaded_model.predict(to_pred)
+
     data = {}
-    data['prediction'] = prediction[-1][0]
+    data['prediction_GLOBAL_SALES'] = prediction[-1][0]
     # print("############################", type(prediction))
     # prediction_json = json.dumps(data)
 
